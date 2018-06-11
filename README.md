@@ -1,2 +1,2 @@
-# test
-- this is my test
+# emlog6-mod
+- an emlog6 mod version
