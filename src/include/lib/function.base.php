@@ -57,7 +57,7 @@ function htmlClean($content, $nl2br = true) {
  * 获取用户ip地址
  */
 function getIp() {
-    $ip = isset($_SERVER['REMOTE_ADDR']) ? $_SERVER['REMOTE_ADDR'] : '';
+    $ip = ($_SERVER["HTTP_CLIENT_IP"] ?? ($_SERVER["HTTP_X_FORWARDED_FOR"]?? ($_SERVER["REMOTE_ADDR"] ?? '0.0.0.0')));
     if (!filter_var($ip, FILTER_VALIDATE_IP)) {
         $ip = '';
     }
